@@ -24,7 +24,7 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Shootings",
+      "field": "Shootings Per 100,000",
       "type": "quantitative",
       "scale": {"type": "log"}
     },
