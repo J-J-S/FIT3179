@@ -24,9 +24,10 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Shootings Per 100,000",
+      "field": "Shootings",
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {"type": "log"},
+      "title": "Shootings Per 100,000"
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "State"},
