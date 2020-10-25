@@ -4,7 +4,7 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/gz_2010_us_040_00_20m.topojson",
+    "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/js/gz_2010_us_040_00_20m.topojson",
     "format": {"type": "topojson", "feature": "gz_2010_us_040_00_20m"}
   },
   "transform": [
@@ -12,7 +12,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/state_shooting_numbers.csv"
+          "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/state_shooting_numbers.csv"
         },
         "key": "state_name",
         "fields": ["shootings_per_100000"]
