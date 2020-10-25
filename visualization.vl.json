@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "USA Police Shootings Per 100,000 People (2015 - 2020)",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/gz_2010_us_040_00_20m.topojson",
+    "format": {"type": "topojson", "feature": "gz_2010_us_040_00_20m"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/state_shooting_numbers.csv"
+        },
+        "key": "state_name",
+        "fields": ["shootings_per_100000"]
+      }
+    },
+    {"calculate": "datum.shootings_per_100000", "as": "Shootings"}
+  ],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Shootings",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "State"},
+      {
+        "field": "Shootings",
+        "type": "quantitative",
+        "title": "Shootings Per 100,000"
+      }
+    ]
+  },
+  "config": {}
+}
