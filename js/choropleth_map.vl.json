@@ -12,15 +12,15 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/state_shooting_numbers.csv"
+          "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/full_state_data.csv"
         },
         "key": "state_name",
-        "fields": ["shootings_per_100000"]
+        "fields": ["shootings", "state_population"]
       }
     },
-    {"calculate": "datum.shootings_per_100000", "as": "Shootings"}
+    {"calculate": "(datum.shootings / datum.state_population)*100000", "as": "Shootings"}
   ],
-  "projection": {"type": "equirectangular"},
+  "projection": {"type": "albersUsa"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
@@ -34,7 +34,14 @@
       {
         "field": "Shootings",
         "type": "quantitative",
-        "title": "Shootings Per 100,000"
+        "title": "Shootings Per 100,000",
+        "format": ".2f"
+      },
+      {
+        "field": "state_population",
+        "type": "quantitative",
+        "title": "Population",
+        "format": ","
       }
     ]
   }
