@@ -16,21 +16,26 @@
 <h2>Shootings Per Capita by State</h2>
 <div id="vis1"></div>
 
-
-
-<h2>Shootings Per Capita by Race</h2>
+<h2>Police Shooting Victims by Race / Location</h2>
 <div id="vis2"></div>
+  
+<h2>Police Shooting Victims Per Capita by Race</h2>
+<div id="vis3"></div>
 
 
 
 <script type="text/javascript">
 var specVis1 = "js/choropleth_map.vl.json";
-var specVis2= "js/racebars.vl.json";
+var specVis2= "js/dotmap.vl.json";
+var specVis3= "js/racebars.vl.json";
 
 vegaEmbed('#vis1', specVis1).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 vegaEmbed('#vis2', specVis2).then(function(result) {
+// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+vegaEmbed('#vis3', specVis3).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 </script>
