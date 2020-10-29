@@ -15,6 +15,7 @@
   "mark": {"type": "bar", "cornerRadiusEnd": 4},
   "encoding": {
     "x": {"field": "race"},
-    "y": {"field": "Shootings Per 100,000", "type": "quantitative"}
+    "y": {"field": "Shootings Per 100,000", "type": "quantitative"},
+    "color": {"field": "race"}
   }
 }
