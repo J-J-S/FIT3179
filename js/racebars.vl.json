@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Shooting Victims by Race (Normalised)",
-  "width": 400,
-  "height": 400,
+  "title": "Shooting Victims by Race (Normalised by Racial Representation in Populace)",
+  "width": 600,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/raceshootings.csv"
   },
@@ -12,10 +12,10 @@
       "as": "Shootings Per 100,000"
     }
   ],
-  "mark": {"type": "bar", "cornerRadiusEnd": 4},
+  "mark": {"type": "bar", "cornerRadiusEnd": 20},
   "encoding": {
-    "x": {"field": "race"},
-    "y": {"field": "Shootings Per 100,000", "type": "quantitative"},
-    "color": {"field": "race"}
+    "x": {"field": "Shootings Per 100,000", "type": "quantitative", "title": "Shootings Per 100,000 of Same Race in Populace"},
+    "y": {"field": "race", "title": "Race"},
+    "color": {"field": "race", "title": "Race"}
   }
 }
