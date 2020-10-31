@@ -4,12 +4,24 @@
   "data": {
     "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/raceshootings.csv"
   },
-  "width": 400,
+  "transform": [{
+    "window": [{
+      "op": "sum",
+      "field": "shootings",
+      "as": "TotalShootings"
+    }],
+    "frame": [null, null]
+  },
+  {
+    "calculate": "datum.shootings/datum.TotalShootings * 100",
+    "as": "Percent"
+  }],
+  "width": 500,
   "height": 400,
   "title": "Total Police Shootings by Race",
   "layer": [
     {
-    "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    "mark": {"type": "arc", "innerRadius": 50}
   },
   {
     "mark": {"type": "text", "radiusOffset": 70},
@@ -18,11 +30,30 @@
     }
   }],
   "encoding": {
-    "theta": {"field": "shootings", "title": "Shootings", "type": "quantitative", "stack": true},
-    "radius": {"field": "shootings", "title": "Shootings", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
-    "color": {"field": "race", "title": "Race", "type": "nominal", "scale": {
+    "theta": {
+      "field": "shootings", 
+      "title": "Shootings", 
+      "type": "quantitative", 
+      "stack": true
+      },
+    "radius": 
+    {"field": "shootings", 
+    "title": "Shootings", 
+    "scale": {"type": "sqrt", "zero": true, "rangeMin": 50}
+    },
+    "color": 
+    {
+      "field": "race", 
+    "title": "Race", 
+    "type": "nominal", 
+    "scale": {
         "range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]
-      }}
+      }
+    },
+    "tooltip": [
+      {"field": "race", "type": "nominal", "title": "Race"}, 
+      {"field": "shootings", "type": "quantitative", "title": "Police Shootings"}, 
+      {"field": "Percent", "type": "quantitative", "title": "Percentage of all Police Shootings", "format": ".2f"}]
   },
   "view": {"stroke": null}
 }
