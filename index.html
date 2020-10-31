@@ -24,6 +24,9 @@
   
 <h2>Police More Likely to Target Non-White, Less Educated</h2>
 <div id="vis4"></div>
+  
+<h2>Racial Composition of Shootings</h2>
+<div id="vis5"></div>
 
 
 
@@ -32,6 +35,7 @@ var specVis1 = "js/choropleth_map.vl.json";
 var specVis2= "js/dotmap.vl.json";
 var specVis3= "js/racebars.vl.json";
 var specVis4= "js/scatter.vl.json";
+var specVis5= "js/radial.vl.json";
 
 vegaEmbed('#vis1', specVis1).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -42,7 +46,10 @@ vegaEmbed('#vis2', specVis2).then(function(result) {
 vegaEmbed('#vis3', specVis3).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
-  vegaEmbed('#vis4', specVis4).then(function(result) {
+vegaEmbed('#vis4', specVis4).then(function(result) {
+// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+vegaEmbed('#vis5', specVis5).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 </script>
