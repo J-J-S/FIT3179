@@ -24,7 +24,7 @@
       "field": "high_school_percent",
       "type": "quantitative",
       "scale": {"range": ["#e7e1ef", "#e6550d"]},
-      "title": "Percentage Graduated High School"
+      "title": "High School Percent"
     },
     "size": {"value": 200},
     "tooltip": [
