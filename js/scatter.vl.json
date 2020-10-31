@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+  "width": 700,
+  "height": 400,
+  "title": "Correlation of State Whiteness and Police Shootings / Education Rate",
+  "data": {"url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/full_state_data.csv"},
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "white", "type": "quantitative", "title": "Percentage White People in State"},
+    "y": {"field": "shootings", "type": "quantitative", "title": "Police Shooting Victims"},
+    "color": {"field": "high_school_percent", "type": "quantitative", "scale": {"range": ["#e7e1ef", "#e6550d"]}, "title": "Percentage Graduated High School"},
+    "size": {"value": 200},
+    "tooltip": [
+      {"field": "state_name", "type": "nominal", "title": "State"},
+      {"field": "white", "type": "quantitative", "title": "Percent White"},
+      {"field": "high_school_percent", "type": "quantitative", "title": "Percent Finished High School"}
+    ]
+  }
+}
