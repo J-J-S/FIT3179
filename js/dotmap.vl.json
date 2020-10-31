@@ -22,7 +22,7 @@
         "longitude": {"field": "lng", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
         "size": {"value": 6},
-        "color": {"field": "race"}
+        "color": {"field": "race", "scale": {"range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]}}
       }
     }
   ]
