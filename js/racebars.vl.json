@@ -16,6 +16,6 @@
   "encoding": {
     "x": {"field": "Shootings Per 100,000", "type": "quantitative", "title": "Shootings Per 100,000 of Same Race in Populace"},
     "y": {"field": "race", "title": "Race"},
-    "color": {"field": "race", "title": "Race"}
+    "color": {"field": "race", "title": "Race", "scale": {"range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]}}
   }
 }
