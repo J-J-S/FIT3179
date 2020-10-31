@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple radial chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/raceshootings.csv"
+  },
+  "width": 400,
+  "height": 400,
+  "title": "Total Police Shootings by Race",
+  "layer": [
+    {
+    "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+  },
+  {
+    "mark": {"type": "text", "radiusOffset": 70},
+    "encoding": {
+      "text": {"field": "shootings", "type": "quantitative"}
+    }
+  }],
+  "encoding": {
+    "theta": {"field": "shootings", "title": "Shootings", "type": "quantitative", "stack": true},
+    "radius": {"field": "shootings", "title": "Shootings", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+    "color": {"field": "race", "title": "Race", "type": "nominal", "scale": {
+        "range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]
+      }}
+  },
+  "view": {"stroke": null}
+}
