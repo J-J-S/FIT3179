@@ -6,6 +6,13 @@
   "data": {
     "url": "https://raw.githubusercontent.com/J-J-S/FIT3179/main/data/raceshootings.csv"
   },
+  "selection": {
+        "race_highlight": {
+          "type": "multi",
+          "fields": ["race"],
+          "bind": "legend"
+        }
+      },
   "transform": [
     {
       "calculate": "(datum.shootings / (datum.percent_total*0.01 * 328239523)) * 100000",
@@ -27,6 +34,10 @@
         "range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]
       }
     },
+    "opacity": {
+          "condition": {"selection": "race_highlight", "value": 1},
+          "value": 0.4
+        },
     "tooltip": [
       {"field": "race", "type": "nominal", "title": "Race"},
       {"field": "percent_total", "type": "quantitative", "title": "Percentage of Populace"},
