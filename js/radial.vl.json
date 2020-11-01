@@ -17,7 +17,7 @@
     "as": "Percent"
   }],
   "width": "container",
-  "height": 400,
+  "height": 350,
   "title": "Total Police Shootings by Race",
   "layer": [
     {
