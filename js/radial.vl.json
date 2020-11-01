@@ -16,7 +16,7 @@
     "calculate": "datum.shootings/datum.TotalShootings * 100",
     "as": "Percent"
   }],
-  "width": 500,
+  "width": "container",
   "height": 400,
   "title": "Total Police Shootings by Race",
   "layer": [
@@ -65,5 +65,6 @@
       {"field": "shootings", "type": "quantitative", "title": "Police Shootings"}, 
       {"field": "Percent", "type": "quantitative", "title": "Percentage of all Police Shootings", "format": ".2f"}]
   },
-  "view": {"stroke": null}
+  "view": {"stroke": null},
+  "config": {}
 }
