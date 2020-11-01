@@ -30,7 +30,7 @@
       },"mark": {"type": "arc", "innerRadius": 50}
   },
   {
-    "mark": {"type": "text", "radiusOffset": 65},
+    "mark": {"type": "text", "radiusOffset": 50},
     "encoding": {
       "text": {"field": "shootings", "type": "quantitative"}
     }
