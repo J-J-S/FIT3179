@@ -21,7 +21,13 @@
   "title": "Total Police Shootings by Race",
   "layer": [
     {
-    "mark": {"type": "arc", "innerRadius": 50}
+    "selection": {
+        "race_highlight": {
+          "type": "multi",
+          "fields": ["race"],
+          "bind": "legend"
+        }
+      },"mark": {"type": "arc", "innerRadius": 50}
   },
   {
     "mark": {"type": "text", "radiusOffset": 70},
@@ -49,6 +55,10 @@
     "scale": {
         "range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]
       }
+    },
+    "opacity": {
+      "condition": {"selection": "race_highlight", "value": 1},
+      "value": 0.4
     },
     "tooltip": [
       {"field": "race", "type": "nominal", "title": "Race"}, 
