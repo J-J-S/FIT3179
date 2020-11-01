@@ -32,7 +32,8 @@
       "title": "Race",
       "scale": {
         "range": ["#6a0dad", "#e41a1c", "#4169e1", "#ffa500", "#66a61e"]
-      }
+      },
+      "legend": null
     },
     "opacity": {
           "condition": {"selection": "race_highlight", "value": 1},
